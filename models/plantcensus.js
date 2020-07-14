@@ -1,63 +1,68 @@
 /* jshint indent: 1 */
+const Sequelize = require('sequelize')
+const db = require("../config/database")
 
-module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('plantcensus', {
+const plantcensus = db.define('plantcensus', {
 		survey: {
-			type: DataTypes.INTEGER,
+			type: Sequelize.INTEGER,
 			allowNull: true,
 			field: 'SURVEY'
 		},
 		state: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'STATE'
 		},
 		county: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'COUNTY'
 		},
 		psu: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'PSU'
 		},
 		point: {
-			type: DataTypes.INTEGER,
+			type: Sequelize.INTEGER,
 			allowNull: true,
 			field: 'POINT'
 		},
 		seqnum: {
-			type: DataTypes.INTEGER,
+			type: Sequelize.INTEGER,
 			allowNull: true,
 			field: 'SEQNUM'
 		},
 		cplant: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'CPLANT'
 		},
 		density: {
-			type: DataTypes.DOUBLE,
+			type: Sequelize.DOUBLE,
 			allowNull: true,
 			field: 'DENSITY'
 		},
 		dbKey: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'DBKey'
 		},
 		primaryKey: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
-			field: 'PrimaryKey'
+			field: 'PrimaryKey',
+			primaryKey:true
 		},
 		fipspsupnt: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'FIPSPSUPNT'
 		}
 	}, {
-		tableName: 'plantcensus'
+		tableName: 'plantcensus',
+		createdAt: false,
+		updatedAt:false,
 	});
-};
+
+module.exports = plantecensus

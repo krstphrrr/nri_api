@@ -1,58 +1,63 @@
 /* jshint indent: 1 */
+const Sequelize = require('sequelize')
+const db = require("../config/database")
 
-module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('ptnote', {
+const ptnote = db.define('ptnote', {
 		survey: {
-			type: DataTypes.INTEGER,
+			type: Sequelize.INTEGER,
 			allowNull: true,
 			field: 'SURVEY'
 		},
 		state: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'STATE'
 		},
 		county: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'COUNTY'
 		},
 		psu: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'PSU'
 		},
 		point: {
-			type: DataTypes.INTEGER,
+			type: Sequelize.INTEGER,
 			allowNull: true,
 			field: 'POINT'
 		},
 		ptsection: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'PTSECTION'
 		},
 		ptnote: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'PTNOTE'
 		},
 		dbKey: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'DBKey'
 		},
 		primaryKey: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
-			field: 'PrimaryKey'
+			field: 'PrimaryKey',
+			primaryKey:true
 		},
 		fipspsupnt: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'FIPSPSUPNT'
 		}
 	}, {
-		tableName: 'ptnote'
+		tableName: 'ptnote',
+		createdAt: false,
+		updatedAt:false,
 	});
-};
+
+module.exports = ptnote

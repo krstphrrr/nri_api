@@ -1,33 +1,38 @@
 /* jshint indent: 1 */
+const Sequelize = require('sequelize')
+const db = require("../config/database")
 
-module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('statenm', {
+const statenm = db.define('statenm', {
 		state: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'STATE'
 		},
 		stabbr: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'STABBR'
 		},
 		statenm: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'STATENM'
 		},
 		dbKey: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
-			field: 'DBKey'
+			field: 'DBKey',
+			primaryKey:true
 		},
 		pastureRegion: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'PastureRegion'
 		}
 	}, {
-		tableName: 'statenm'
+		tableName: 'statenm',
+		createdAt: false,
+		updatedAt:false,
 	});
-};
+
+module.exports = statenm

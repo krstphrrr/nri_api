@@ -1,88 +1,93 @@
 /* jshint indent: 1 */
+const Sequelize = require('sequelize')
+const db = require("../config/database")
 
-module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('pastureheights', {
+const pastureheights = db.define('pastureheights', {
 		survey: {
-			type: DataTypes.INTEGER,
+			type: Sequelize.INTEGER,
 			allowNull: true,
 			field: 'SURVEY'
 		},
 		state: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'STATE'
 		},
 		county: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'COUNTY'
 		},
 		psu: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'PSU'
 		},
 		point: {
-			type: DataTypes.INTEGER,
+			type: Sequelize.INTEGER,
 			allowNull: true,
 			field: 'POINT'
 		},
 		transect: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'TRANSECT'
 		},
 		distance: {
-			type: DataTypes.INTEGER,
+			type: Sequelize.INTEGER,
 			allowNull: true,
 			field: 'DISTANCE'
 		},
 		hplant: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'HPLANT'
 		},
 		height: {
-			type: DataTypes.DOUBLE,
+			type: Sequelize.DOUBLE,
 			allowNull: true,
 			field: 'HEIGHT'
 		},
 		heightUnit: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'HEIGHT_UNIT'
 		},
 		wplant: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'WPLANT'
 		},
 		wheight: {
-			type: DataTypes.DOUBLE,
+			type: Sequelize.DOUBLE,
 			allowNull: true,
 			field: 'WHEIGHT'
 		},
 		wheightUnit: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'WHEIGHT_UNIT'
 		},
 		primaryKey: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
-			field: 'PrimaryKey'
+			field: 'PrimaryKey',
+			primaryKey:true
 		},
 		fipspsupnt: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'FIPSPSUPNT'
 		},
 		dbKey: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'DBKey'
 		}
 	}, {
-		tableName: 'pastureheights'
+		tableName: 'pastureheights',
+		createdAt: false,
+		updatedAt:false,
 	});
-};
+
+module.exports = pastureheights

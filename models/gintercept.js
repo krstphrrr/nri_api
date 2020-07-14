@@ -1,73 +1,78 @@
 /* jshint indent: 1 */
+const Sequelize = require('sequelize')
+const db = require("../config/database")
 
-module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('gintercept', {
+const gintercept = db.define('gintercept', {
 		survey: {
-			type: DataTypes.INTEGER,
+			type: Sequelize.INTEGER,
 			allowNull: true,
 			field: 'SURVEY'
 		},
 		state: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'STATE'
 		},
 		county: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'COUNTY'
 		},
 		psu: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'PSU'
 		},
 		point: {
-			type: DataTypes.INTEGER,
+			type: Sequelize.INTEGER,
 			allowNull: true,
 			field: 'POINT'
 		},
 		transect: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'TRANSECT'
 		},
 		gapType: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'GAP_TYPE'
 		},
 		seqnum: {
-			type: DataTypes.INTEGER,
+			type: Sequelize.INTEGER,
 			allowNull: true,
 			field: 'SEQNUM'
 		},
 		startGap: {
-			type: DataTypes.DOUBLE,
+			type: Sequelize.DOUBLE,
 			allowNull: true,
 			field: 'START_GAP'
 		},
 		endGap: {
-			type: DataTypes.DOUBLE,
+			type: Sequelize.DOUBLE,
 			allowNull: true,
 			field: 'END_GAP'
 		},
 		dbKey: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'DBKey'
 		},
 		primaryKey: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
-			field: 'PrimaryKey'
+			field: 'PrimaryKey',
+			primaryKey:true
 		},
 		fipspsupnt: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'FIPSPSUPNT'
 		}
 	}, {
-		tableName: 'gintercept'
+		tableName: 'gintercept',
+		createdAt: false,
+		updatedAt:false,
 	});
-};
+
+module.exports = gintercept

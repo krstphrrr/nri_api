@@ -1,88 +1,93 @@
 /* jshint indent: 1 */
+const Sequelize = require('sequelize')
+const db = require("../config/database")
 
-module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('esfsg', {
+const esfsg = db.define('esfsg', {
 		survey: {
-			type: DataTypes.INTEGER,
+			type: Sequelize.INTEGER,
 			allowNull: true,
 			field: 'SURVEY'
 		},
 		state: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'STATE'
 		},
 		county: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'COUNTY'
 		},
 		psu: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'PSU'
 		},
 		point: {
-			type: DataTypes.INTEGER,
+			type: Sequelize.INTEGER,
 			allowNull: true,
 			field: 'POINT'
 		},
 		seqnum: {
-			type: DataTypes.INTEGER,
+			type: Sequelize.INTEGER,
 			allowNull: true,
 			field: 'SEQNUM'
 		},
 		coverage: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'COVERAGE'
 		},
 		startMark: {
-			type: DataTypes.DOUBLE,
+			type: Sequelize.DOUBLE,
 			allowNull: true,
 			field: 'START_MARK'
 		},
 		endMark: {
-			type: DataTypes.DOUBLE,
+			type: Sequelize.DOUBLE,
 			allowNull: true,
 			field: 'END_MARK'
 		},
 		esfsgState: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'ESFSG_STATE'
 		},
 		esfsgMlra: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'ESFSG_MLRA'
 		},
 		esfsgSite: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'ESFSG_SITE'
 		},
 		esfsgName: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'ESFSG_NAME'
 		},
 		dbKey: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'DBKey'
 		},
 		primaryKey: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
-			field: 'PrimaryKey'
+			field: 'PrimaryKey',
+			primaryKey:true
 		},
 		fipspsupnt: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'FIPSPSUPNT'
 		}
 	}, {
-		tableName: 'esfsg'
+		tableName: 'esfsg',
+		createdAt: false,
+		updatedAt:false,
 	});
-};
+
+module.exports = esfsg

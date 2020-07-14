@@ -1,263 +1,268 @@
 /* jshint indent: 1 */
+const Sequelize = require('sequelize')
+const db = require("../config/database")
 
-module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('point', {
+const point = db.define('point', {
 		survey: {
-			type: DataTypes.INTEGER,
+			type: Sequelize.INTEGER,
 			allowNull: true,
 			field: 'SURVEY'
 		},
 		state: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'STATE'
 		},
 		county: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'COUNTY'
 		},
 		psu: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'PSU'
 		},
 		point: {
-			type: DataTypes.INTEGER,
+			type: Sequelize.INTEGER,
 			allowNull: true,
 			field: 'POINT'
 		},
 		mlra: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'MLRA'
 		},
 		own: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'OWN'
 		},
 		landuse: {
-			type: DataTypes.INTEGER,
+			type: Sequelize.INTEGER,
 			allowNull: true,
 			field: 'LANDUSE'
 		},
 		verticalSlopeShape: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'VERTICAL_SLOPE_SHAPE'
 		},
 		horizontalSlopeShape: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'HORIZONTAL_SLOPE_SHAPE'
 		},
 		slopePercent: {
-			type: DataTypes.DOUBLE,
+			type: Sequelize.DOUBLE,
 			allowNull: true,
 			field: 'SLOPE_PERCENT'
 		},
 		ssaid: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'SSAID'
 		},
 		musym: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'MUSYM'
 		},
 		componentName: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'COMPONENT_NAME'
 		},
 		componentId: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'COMPONENT_ID'
 		},
 		ecoSite1992: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'ECO_SITE_1992'
 		},
 		fullEsdPlot: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'FULL_ESD_PLOT'
 		},
 		esdFitsSoil: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'ESD_FITS_SOIL'
 		},
 		activeCutting: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'ACTIVE_CUTTING'
 		},
 		apparentTrend: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'APPARENT_TREND'
 		},
 		basalGapsNesw: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'BASAL_GAPS_NESW'
 		},
 		canopyGapsNesw: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'CANOPY_GAPS_NESW'
 		},
 		basalGapsNwse: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'BASAL_GAPS_NWSE'
 		},
 		canopyGapsNwse: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'CANOPY_GAPS_NWSE'
 		},
 		plotSizeHerb: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'PLOT_SIZE_HERB'
 		},
 		totAnnProd: {
-			type: DataTypes.DOUBLE,
+			type: Sequelize.DOUBLE,
 			allowNull: true,
 			field: 'TOT_ANN_PROD'
 		},
 		similarityIndex: {
-			type: DataTypes.DOUBLE,
+			type: Sequelize.DOUBLE,
 			allowNull: true,
 			field: 'SIMILARITY_INDEX'
 		},
 		ptstatus: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'PTSTATUS'
 		},
 		soilConfidenceRating: {
-			type: DataTypes.DOUBLE,
+			type: Sequelize.DOUBLE,
 			allowNull: true,
 			field: 'SOIL_CONFIDENCE_RATING'
 		},
 		dbKey: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'DBKey'
 		},
 		primaryKey: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
-			field: 'PrimaryKey'
+			field: 'PrimaryKey',
+			primaryKey:true
 		},
 		fipspsupnt: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'FIPSPSUPNT'
 		},
 		slopeLength: {
-			type: DataTypes.DOUBLE,
+			type: Sequelize.DOUBLE,
 			allowNull: true,
 			field: 'SLOPE_LENGTH'
 		},
 		slopeAspect: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'SLOPE_ASPECT'
 		},
 		biomassPlotSizeHerb: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'BIOMASS_PLOT_SIZE_HERB'
 		},
 		biomassPlotMethod: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'BIOMASS_PLOT_METHOD'
 		},
 		biomassWoodyMethod: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'BIOMASS_WOODY_METHOD'
 		},
 		grazingUse: {
-			type: DataTypes.DOUBLE,
+			type: Sequelize.DOUBLE,
 			allowNull: true,
 			field: 'GRAZING_USE'
 		},
 		hayed: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'HAYED'
 		},
 		optSsiPasture: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'OPT_SSI_PASTURE'
 		},
 		optDwrPasture: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'OPT_DWR_PASTURE'
 		},
 		optDwrRange: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'OPT_DWR_RANGE'
 		},
 		sageExists: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'SAGE_EXISTS'
 		},
 		perennialCanopyGapsNesw: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'PERENNIAL_CANOPY_GAPS_NESW'
 		},
 		perennialCanopyGapsNwse: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'PERENNIAL_CANOPY_GAPS_NWSE'
 		},
 		componentHistorical: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'COMPONENT_HISTORICAL'
 		},
 		componentChosen: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'COMPONENT_CHOSEN'
 		},
 		componentPopulated: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'COMPONENT_POPULATED'
 		},
 		landuseSource: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'LANDUSE_SOURCE'
 		},
 		gapsDifferentNesw: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'GAPS_DIFFERENT_NESW'
 		},
 		gapsDifferentNwse: {
-			type: DataTypes.TEXT,
+			type: Sequelize.TEXT,
 			allowNull: true,
 			field: 'GAPS_DIFFERENT_NWSE'
 		}
 	}, {
-		tableName: 'point'
+		tableName: 'point',
+		createdAt: false,
+		updatedAt:false,
 	});
-};
+
+module.exports = point
