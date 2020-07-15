@@ -76,7 +76,7 @@ const ecosite = db.define('ecosite', {
 		primaryKey: {
 			type: Sequelize.TEXT,
 			allowNull: true,
-			field: 'PrimaryKey'
+			field: 'PrimaryKey',
 			primaryKey:true
 		},
 		fipspsupnt: {

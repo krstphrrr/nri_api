@@ -65,4 +65,4 @@ const plantcensus = db.define('plantcensus', {
 		updatedAt:false,
 	});
 
-module.exports = plantecensus
+module.exports = plantcensus

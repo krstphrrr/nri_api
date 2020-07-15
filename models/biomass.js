@@ -96,4 +96,4 @@ const biomass = db.define('biomass', {
 		updatedAt:false,
 	});
 
-	module.exports = altwoody;
+	module.exports = biomass;
