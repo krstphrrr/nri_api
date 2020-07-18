@@ -21,10 +21,12 @@ const soildisagController = require('../controllers/soildisagController')
 const soilhorizonController = require('../controllers/soilhorizonController')
 const statenmController = require('../controllers/statenmController')
 const router = express.Router()
-
+const jwtAuthz = require('express-jwt-authz')
 // const authCheck = require('../middleware/check-auth')
+const authCheck = require('../middleware/check-auth')
 
-router.get('/altwoody', altwoodyController.getAltwoody)
+
+router.get('/altwoody',authCheck, jwtAuthz(["read:altwoody"],{customScopeKey:"permissions"}), altwoodyController.getAltwoody)
 router.get('/biomass', biomassController.getBiomass)
 router.get('/concern', concernController.getConcern)
 router.get('/disturbance', disturbanceController.getDisturbance)

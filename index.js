@@ -9,7 +9,7 @@ const cors = require('cors')
 const helmet = require('helmet')
 const morgan = require('morgan')
 
-const authCheck = require('./middleware/check-auth')
+
 // routes
 const nriRoutes = require('./routes/getTables')
 
@@ -27,7 +27,7 @@ app.get('/', (req, res) =>{
   // console.log(secret)
 })
 
-app.use('/apiv1',authCheck, nriRoutes)
+app.use('/apiv1', nriRoutes)
 
 db
   .sync({logging:false})
